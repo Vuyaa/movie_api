@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Vuyaa/movie_api#readme",
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0"
   }
 }
