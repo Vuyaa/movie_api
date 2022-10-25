@@ -1,6 +1,13 @@
 const express = require("express");
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const morgan = require('morgan');
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'),
+{flags:'a'})
+
+app.use(morgan('combined', {stream: accessLogStream}));
 
 let top10Movies = [
   {
@@ -55,6 +62,11 @@ app.get("/movies", (req, res) => {
 });
 
 app.use(express.static("public"));
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Ups, Boo-Boo happened!');
+});
 
 // listen for requests
 app.listen(8080, () => {
