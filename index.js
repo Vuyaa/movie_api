@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const morgan = require('morgan');
 
 let top10Movies = [
   {
@@ -53,7 +54,7 @@ app.get("/movies", (req, res) => {
   res.json(top10Movies);
 });
 
-app.use(express.static('./public'));
+app.use(express.static("public"));
 
 // listen for requests
 app.listen(8080, () => {
