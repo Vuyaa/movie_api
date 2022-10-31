@@ -253,3 +253,6 @@ Timestamp: Thu Oct 20 2022 14:11:29 GMT+0200 (srednjoeuropsko ljetno vrijeme)
 ::1 - - [31/Oct/2022:13:53:56 +0000] "POST /users/2/The%20maze%20runner HTTP/1.1" 200 48 "-" "PostmanRuntime/7.29.2"
 ::1 - - [31/Oct/2022:13:55:50 +0000] "PUT /users/1 HTTP/1.1" 200 86 "-" "PostmanRuntime/7.29.2"
 ::1 - - [31/Oct/2022:14:02:09 +0000] "DELETE /users/1/Interstella HTTP/1.1" 200 45 "-" "PostmanRuntime/7.29.2"
+::1 - - [31/Oct/2022:14:24:51 +0000] "GET /movies HTTP/1.1" 200 13605 "-" "PostmanRuntime/7.29.2"
+::1 - - [31/Oct/2022:14:26:08 +0000] "GET /movies/Shutter%20Island HTTP/1.1" 200 1079 "-" "PostmanRuntime/7.29.2"
+::1 - - [31/Oct/2022:14:34:48 +0000] "GET /movies/directors/Christopher%20Nolan HTTP/1.1" 200 505 "-" "PostmanRuntime/7.29.2"
