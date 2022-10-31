@@ -62,6 +62,7 @@
                       },
                 </td>
             </tr>
+            
             <tr>
                 <td>Get Genre by Name</td>
                 <td>/movies/genre/[genreName]</td>
@@ -70,6 +71,7 @@
                 <td>-</td>
                 <td>A JSON object holding data about the genre of a movie</td>
             </tr>
+
             <tr>  
                 <td>Get director data by name</td>
                 <td>/movies/directors/[authorName]</td>
@@ -78,7 +80,6 @@
                 <td>-</td>
                 <td>A JSON object holding data about the data of a director</td>
             </tr>
-
 
             <tr>
                 <td>Allow new users to Register</td>
@@ -98,47 +99,17 @@
         </tr>
         <tr>
             <td>Adds movie to favorite list</td>
-            <td>/users/[id]/[movieTitle]</td>
+            <td>/users/[id]/favorites/[movieTitle]</td>
             <td>POST</td>
-            <td>[movieTitle]</td>
+            <td>[movieID]</td>
             <td>-</td>
             <td>A text message indicating whether the Movie was added</td>
         </tr>
-
-
- <!----         <tr>
-                <td>Add a movie</td>
-                <td>/movies</td>
-                <td>POST</td>
-                <td>A JSON object holding data about the movie to add, structured like:
-                    {
-                        title: "Shutter Island",
-                        description:"",
-                        imgURL:"",
-                        author:{name: "Martin Scorsese",
-                                biography:""},
-                        genre:{name:"Mystery, Thriller"
-                               description:""},
-                      },             
-                </td>
-                <td>A JSON object holding data about the movie that was added:
-                    title: "Shutter Island",
-                    description:"",
-                    imgURL:"",
-                    author:{name: "Martin Scorsese",
-                            biography:""},
-                    genre:{name:"Mystery, Thriller"
-                           description:""},
-                  },
-                </td>
-            </tr>
-        --->
-            <tr>
                 <tr>
                     <td>remove movie from favorite list</td>
-                    <td>/users/[id]/[movieTitle]</td>
+                    <td>/users/[id]/favorites/[movieID]</td>
                     <td>DELETE</td>
-                    <td>[movieTitle]</td>
+                    <td>[movieID]</td>
                     <td>-</td>
                     <td>A text message indicating whether the Movie was removed</td>
                 </tr>

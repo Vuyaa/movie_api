@@ -33,6 +33,7 @@ let users = [
 
 let top10Movies = [
   {
+    movieID:1,
     title: "The Lord of the Rings",
     description:
       "A fellowship of hobbits, elves, dwarfs, and men is formed to destroy the ring by casting it into the volcanic fires of the Crack of Doom, where it was forged. They are opposed on their harrowing mission by the evil Sauron and his Black Riders.",
@@ -51,6 +52,7 @@ let top10Movies = [
   },
 
   {
+    movieID:2,
     title: "Harry Potter Serial",
     description:
       "The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles (non-magical people).",
@@ -69,6 +71,7 @@ let top10Movies = [
   },
 
   {
+    movieID:3,
     title: "Interstellar",
     description:
       "Interstellar is about Earth's last chance to find a habitable planet before a lack of resources causes the human race to go extinct. The film's protagonist is Cooper (Matthew McConaughey), a former NASA pilot who is tasked with leading a mission through a wormhole to find a habitable planet in another galaxy.",
@@ -87,6 +90,7 @@ let top10Movies = [
   },
 
   {
+    movieID:4,
     title: "Inception",
     description:
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
@@ -105,6 +109,7 @@ let top10Movies = [
   },
 
   {
+    movieID:5,
     title: "The maze runner",
     description:
       "A teen wakes up in a clearing in the center of a gigantic maze with no memory of his past, finding himself a resident in community of boys who have built a village in the glade and who sends two of its strongest and fittest runners into the maze every morning to find a way out.",
@@ -123,6 +128,7 @@ let top10Movies = [
   },
 
   {
+    movieID:6,
     title: "Shawshank redemption",
     description:
       "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency. Chronicles the experiences of a formerly successful banker as a prisoner in the gloomy jailhouse of Shawshank after being found guilty of a crime he did not commit.",
@@ -140,6 +146,7 @@ let top10Movies = [
   },
 
   {
+    movieID:7,
     title: "Forrest Gump",
     description:
       "Forrest Gump, an innocent and kind-hearted Alabama boy, has been dealing with other people's unkindness nearly all his life. Having grown up with beautiful Jenny, his only friend, Forrest yearns to learn all about the ways of the world and embarks on a mission to find his true purpose in life.",
@@ -158,6 +165,7 @@ let top10Movies = [
   },
 
   {
+    movieID:8,
     title: "The Green Mile",
     description:
       "Stars Tom Hanks as a death row corrections officer during the U.S. Great Depression who witnesses supernatural events that occur after an enigmatic inmate (Michael Clarke Duncan) is brought to his facility. It's just another normal day on the Green Mile for prison guard Paul Edgecomb.",
@@ -176,6 +184,7 @@ let top10Movies = [
   },
 
   {
+    movieID:9,
     title: "Pan's labyrinth",
     description:
       "In the Falangist Spain of 1944, the bookish young stepdaughter of a sadistic army officer escapes into an eerie but captivating fantasy world. In 1944 Falangist Spain, a girl, fascinated with fairy-tales, is sent along with her pregnant mother to live with her new stepfather, a ruthless captain of the Spanish army.",
@@ -194,6 +203,7 @@ let top10Movies = [
   },
 
   {
+    movieID:10,
     title: "Shutter Island",
     description:
       "In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane. In 1954, up-and-coming U.S. marshal Teddy Daniels is assigned to investigate the disappearance of a patient from Boston's Shutter Island Ashecliffe Hospital.",
@@ -246,20 +256,20 @@ app.put("/users/:id", (req, res) => {
   }
 });
 //Add new movie to users favoriteMovie array
-app.post("/users/:id/:movieTitle", (req, res) => {
-  const { id, movieTitle } = req.params;
+app.post("/users/:id/favorites/:movieID", (req, res) => {
+  const { id, movieID } = req.params;
 
   let user = users.find((user) => user.id == id);
-
+  let movie = top10Movies.find((movie) => movie.movieID); 
   if (user) {
-    user.favoriteMovies.push(movieTitle);
+    user.favoriteMovies.push(movie);
     res
       .status(200)
-      .send(
-        req.params.movieTitle +
+      .send("movie with an id " +
+        req.params.movieID +
           " has been added to user " +
           req.params.id +
-          " 's array"
+          "'s array"
       );
   } else {
     res.status(400).send("there is no user with id: " + req.params.id);
@@ -281,22 +291,20 @@ app.delete("/users/:id", (req, res) => {
   }
 });
 //Delete favorite movie from users favoriteMovie array
-app.delete("/users/:id/:movieTitle", (req, res) => {
-  const { id, movieTitle } = req.params;
+app.delete("/users/:id/favorites/:movieID", (req, res) => {
+  const { id, movieID } = req.params;
 
   let user = users.find((user) => user.id == id);
+  let movie = top10Movies.find((movie) => movie.movieID);
 
   if (user) {
     user.favoriteMovies = user.favoriteMovies.filter(
-      (title) => title !== movieTitle
+      (title) => title !== movieID
     );
     res
       .status(200)
       .send(
-        req.params.movieTitle +
-          " has been removed from user " +
-          req.params.id +
-          " 's array"
+        `movie with an id ${req.params.movieID} has been removed from user ${req.params.id}'s array`
       );
   } else {
     res.status(400).send("There is no user with id: " + req.params.id);
@@ -346,48 +354,6 @@ app.get("/movies/:title", (req, res) => {
     })
   );
 });
-
-//Post new movie in the list
-/*app.post("/movies", (req, res) => {
-  let newMovie = req.body;
-
-  if (!newMovie.title) {
-    const message = "Missing title in request body";
-    res.status(400).send(message);
-  } else {
-    top10Movies.push(newMovie);
-    res.status(201).send(newMovie);
-  }
-});
-*/
-//Delete movie object by title
-
-/*app.delete("/movies", (req, res) => {
-  let movie = top10Movies.find((movie) => {
-    return (movie.title = req.params.title);
-  });
-
-  if (movie) {
-    top10Movies = top10Movies.filter((obj) => {
-      return obj.title === req.params.title;
-    });
-    res.status(201).send("Movie " + req.params.title + " was deleted");
-  }
-});
-*/
-
-//Update user data
-
-/*app.put('/movies/:title/:id' , (req, res) => {
-  let movie = top10Movies.find((movie) => {return movie.title === req.params.title});
-  
-  if (movie){
-    movie.title[req.params.title] = parseInt(req.params.id);
-    res.status(201).send('Student ' + req.params.title + ' was assigned a grade of ' + req.params.title + ' in ' );
-  } else {
-    res.status(404).send('Student with the name ' + req.params.title + ' was not found.');
-  }
-});*/
 
 app.use(express.static("public")); //Instead of using app.get(documentation.html we used express.static method to make all files from folder public reachable using correct endpoint in url based on the file name in folder (eg.documentation.html)
 
