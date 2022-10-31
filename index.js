@@ -259,10 +259,10 @@ app.post("/users/:id/:movieTitle", (req, res) => {
         req.params.movieTitle +
           " has been added to user " +
           req.params.id +
-          " s array"
+          " 's array"
       );
   } else {
-    res.status(400).send("there is no user with id:" + req.params.id);
+    res.status(400).send("there is no user with id: " + req.params.id);
   }
 });
 
@@ -294,9 +294,9 @@ app.delete("/users/:id/:movieTitle", (req, res) => {
       .status(200)
       .send(
         req.params.movieTitle +
-          " has been removed from user" +
+          " has been removed from user " +
           req.params.id +
-          " s array"
+          " 's array"
       );
   } else {
     res.status(400).send("There is no user with id: " + req.params.id);
