@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //JSON object holding data about top10movies such as title and author
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+let allowedOrigins = '*';
 app.use(cors({
   origin: (origin, callback) => {
     if(!origin) return callback(null, true);
