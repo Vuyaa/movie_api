@@ -18,9 +18,11 @@ require("./passport");
 const cors = require("cors");
 const { check, validationResult } = require("express-validator");
 
-mongoose.connect("mongodb://localhost:27017/popCorny", {
+/*mongoose.connect("mongodb://localhost:27017/popCorny", {
   useUnifiedTopology: true,
-});
+});*/
+
+mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Logging data about visiting different endpoints in log.txt (Time and date, which endpoint was visited)
 const accessLogStream = fs.createWriteStream(path.join(__dirname, "log.txt"), {
