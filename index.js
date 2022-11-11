@@ -192,7 +192,7 @@ app.post(
     Users.findOneAndUpdate(
       { Username: req.params.Username },
       {
-        $push: { FavoriteMovies: req.params._id },
+        $push: { FavouriteMovies: req.params._id },
       },
       { new: true }, // This line makes sure that the updated document is returned
       (err, updatedUser) => {
