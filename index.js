@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //JSON object holding data about top10movies such as title and author
 
-let allowedOrigins = "*";
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://popkorny.herokuapp.com'];
 app.use(
   cors({
     origin: (origin, callback) => {
