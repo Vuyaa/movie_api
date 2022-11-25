@@ -38,8 +38,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //JSON object holding data about top10movies such as title and author
 
-const cors = require("cors");
-app.use(cors());
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', 'https://popkorny.herokuapp.com', '*',"https://i.ytimg.com/an/Mj9IA9tTfio/7642531020657881441_mq.jpg?v=5f5bf0ff"];
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        // If a specific origin isn’t found on the list of allowed origins
+        let message =
+          "The CORS policy for this application doesn’t allow access from origin " +
+          origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 
 // GET requests
 //This is default page on the server
