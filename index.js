@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //JSON object holding data about top10movies such as title and author
 
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', "https://site--popkorny--w5mfxztkv9bc.code.run/", '*',"https://i.ytimg.com/an/Mj9IA9tTfio/7642531020657881441_mq.jpg?v=5f5bf0ff"];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234', "https://site--popkorny--w5mfxztkv9bc.code.run/movies", '*',"https://i.ytimg.com/an/Mj9IA9tTfio/7642531020657881441_mq.jpg?v=5f5bf0ff", 'https://site--popkorny--w5mfxztkv9bc.code.run/login'];
 app.use(
   cors({
     origin: (origin, callback) => {
