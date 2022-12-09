@@ -8,13 +8,12 @@ const { send } = require("process");
 const app = express();
 const mongoose = require("mongoose");
 const Models = require("./models.js");
-let auth = require("./auth")(app);
+
 const Movies = Models.Movie;
 const Users = Models.User;
 const Genres = Models.Genre;
 const Directors = Models.Director;
-const passport = require("passport");
-require("./passport");
+
 const cors = require("cors");
 const { check, validationResult } = require("express-validator");
 const dotenv = require("dotenv");
@@ -54,6 +53,10 @@ app.use(
     },
   })
 );
+
+let auth = require("./auth")(app);
+const passport = require("passport");
+require("./passport");
 
 // GET requests
 //This is default page on the server
