@@ -252,7 +252,7 @@ app.delete(
 
 //To the JSON object above we appended the /movies endpoint to url (movies = /movies)
 app.get(
-  "/movies", passport.authenticate('jwt', { session: false }),
+  "/movies", //passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Movies.find()
       .then((Movies) => {
