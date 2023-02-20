@@ -107,13 +107,14 @@ app.post(
       return res.status(422).json({ errors: errors.array() });
     }
     Users.findOne({ Username: req.body.Username })
+    let hashedPassword = Users.hashPassword(req.body.Password);
       .then((user) => {
         if (user) {
           return res.status(400).send(req.body.Username + " already exists");
         } else {
           Users.create({
             Username: req.body.Username,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday,
           })
@@ -221,13 +222,13 @@ app.put(
       return res.status(422).json({ errors: errors.array() });
     }
 
-    
+    let hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOneAndUpdate(
       { Username: req.params.Username },
       {
         $set: {
           Username: req.body.Username,
-          Password: req.body.Password,
+          Password: hashedPassword,
           Email: req.body.Email,
           Birthday: req.body.Birthday,
         },
