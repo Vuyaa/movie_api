@@ -13,8 +13,6 @@
         <li>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)</li>
         <li>Allow existing users to deregister (showing only a text that a user email has been removed—more on this later)</li>
     </ol>
-
-    <h2>API endpoints</h2>
     <table>
         <thead> 
             <tr>
