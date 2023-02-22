@@ -23,34 +23,34 @@
     </ol>
 
     <h2>API endpoints</h2>
-    <table>
-        <thead> 
-            <tr>
-                <th>Business Logic</th>
-                <th>URL</th>
-                <th>HTTP Method</th>
-                <th>Query Parameters</th>
-                <th>Request body data format</th>
-                <th>Response body data format</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Get a list of the movies</td>       
-                <td>/movies</td>
-                <td>GET</td> 
-                <td>-</td>
-                <td>-</td>
-                <td>A JSON object holding data about all the movies</td>         
-            </tr>
+    <ol>
 
-            <tr>
-                <td>Get data about the movie by title</td>
-                <td>/movies/[title]</td>
-                <td>GET</td>
-                <td>[title]</td>
-                <td>-</td>
-                <td>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
+            <li>
+                <li>Business Logic</li>
+                <li>URL</li>
+                <li>HTTP Method</li>
+                <li>Query Parameters</li>
+                <li>Request body data format</li>
+                <li>Response body data format</li>
+            </li>
+
+        <ol>
+            <li>
+                <li>Get a list of the movies</li>       
+                <li>/movies</li>
+                <li>GET</li> 
+                <li>-</li>
+                <li>-</li>
+                <li>A JSON object holding data about all the movies</li>         
+            </li>
+
+            <li>
+                <li>Get data about the movie by title</li>
+                <li>/movies/[title]</li>
+                <li>GET</li>
+                <li>[title]</li>
+                <li>-</li>
+                <li>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -60,57 +60,57 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },
-                </td>
-            </tr>
-            <tr>
-                <td>Get Genre by Name</td>
-                <td>/movies/genre/[genreName]</td>
-                <td>GET</td>
-                <td>[genreName]</td>
-                <td>-</td>
-                <td>A JSON object holding data about the genre of a movie</td>
-            </tr>
-            <tr>  
-                <td>Get director data by name</td>
-                <td>/movies/directors/[authorName]</td>
-                <td>GET</td>
-                <td>[authorName]</td>
-                <td>-</td>
-                <td>A JSON object holding data about the data of a director</td>
-            </tr>
+                </li>
+            </li>
+            <li>
+                <li>Get Genre by Name</li>
+                <li>/movies/genre/[genreName]</li>
+                <li>GET<li/li>li
+                <li>[genreName]</li>
+                <li>-</li>
+                <li>A JSON object holding data about the genre of a movie</li>
+            </li>
+            <li>  
+                <li>Get director data by name</li>
+                <li>/movies/directors/[authorName]</li>
+                <li>GET</lili>
+                <li>[authorName]</li>
+                <li>-</li>
+                <li>A JSON object holding data about the data of a director</li>
+            </li>
 
 
-            <tr>
-                <td>Allow new users to Register</td>
-                <td>/users</td>
-                <td>POST</td>
-                <td>-</td>
-                <td>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </td>
-                <td>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </td>
-            </tr>
+            <li>
+                <li>Allow new users to Register</li>
+                <li>/users</li>
+                <li>POST</li>
+                <li>-</li>
+                <li>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </li>
+                <li>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </li>
+            </li>
 
-            <td>Allow new users update their user info</td>
-            <td>/users/[id]</td>
-            <td>PUT</td>
-            <td>[id]</td>
-            <td>-</td>
-            <td>A JSON object holding data about the updated info</td>
-        </tr>
-        <tr>
-            <td>Adds movie to favorite list</td>
-            <td>/users/[id]/[movieTitle]</td>
-            <td>POST</td>
-            <td>[movieTitle]</td>
-            <td>-</td>
-            <td>A text message indicating whether the Movie was added</td>
-        </tr>
+            <li>Allow new users update their user info</li>
+            <li>/users/[id]</li>
+            <li>PUT</li>
+            <li>[id]</li>
+            <li>-</li>
+            <li>A JSON object holding data about the updated info</li>
+        </li>
+        <li>
+            <li>Adds movie to favorite list</li>
+            <li>/users/[id]/[movieTitle]</li>
+            <li>POST</li>
+            <li>[movieTitle]</li>
+            <li>-</li>
+            <li>A text message indicating whether the Movie was added</li>
+        </li>
 
 
- <!----         <tr>
-                <td>Add a movie</td>
-                <td>/movies</td>
-                <td>POST</td>
-                <td>A JSON object holding data about the movie to add, structured like:
+ <!----         <li>
+                <li>Add a movie</li>
+                <li>/movies</li>
+                <li>POST</li>
+                <li>A JSON object holding data about the movie to add, structured like:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -120,8 +120,8 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },             
-                </td>
-                <td>A JSON object holding data about the movie that was added:
+                </li>
+                <li>A JSON object holding data about the movie that was added:
                     title: "Shutter Island",
                     description:"",
                     imgURL:"",
@@ -130,27 +130,26 @@
                     genre:{name:"Mystery, Thriller"
                            description:""},
                   },
-                </td>
-            </tr>
+                </li>
+            </li>
         --->
-            <tr>
-                <tr>
-                    <td>remove movie from favorite list</td>
-                    <td>/users/[id]/[movieTitle]</td>
-                    <td>DELETE</td>
-                    <td>[movieTitle]</td>
-                    <td>-</td>
-                    <td>A text message indicating whether the Movie was removed</td>
-                </tr>
-                <tr>
-                    <td>Allow existing users to remove it's data</td>
-                    <td>/users/[id]</td>
-                    <td>DELETE</td>
-                    <td>[id]</td>
-                    <td>-</td>
-                    <td>A text message indicating whether the User has deregistered</td>
-                </tr>
-        </tbody>
-   </table>
+            <li>
+                <li>
+                    <li>remove movie from favorite list</li>
+                    <li>/users/[id]/[movieTitle]</li>
+                    <li>DELETE</li>
+                    <li>[movieTitle]</li>
+                    <li>-</li>
+                    <li>A text message indicating whether the Movie was removed</li>li
+                </li>
+                <li>
+                    <li>Allow existing users to remove it's data</li>
+                    <li>/users/[id]</li>
+                    <li>DELETE</li>
+                    <li>[id]</li>
+                    <li>-</li>
+                    <li>A text message indicating whether the User has deregistered</li>
+                </li>
+        </ol>
 </body>
 </html># movie_api
