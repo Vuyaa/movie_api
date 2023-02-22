@@ -1,4 +1,13 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
    <h1>Movie_API called Popcorny</h1>
    <p>Users will be able to acces information about different movies, directors, and genres as well as set up and update their profile where they can store their favourite movies.</p>
    <h2>Features</h2> 
@@ -13,6 +22,7 @@
         <li>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)</li>
         <li>Allow existing users to deregister (showing only a text that a user email has been removed—more on this later)</li>
     </ol>
+    <h2>API endpoints</h2>
     <table>
         <thead> 
             <tr>
@@ -26,21 +36,20 @@
         </thead>
         <tbody>
             <tr>
-                <th>Get a list of the movies</th>       
-                <th>/movies</th>
-                <th>GET</th> 
-                <th>-</th>
-                <th>-</th>
-                <th>A JSON object holding data about all the movies</th>         
+                <td>Get a list of the movies</td>       
+                <td>/movies</td>
+                <td>GET</td> 
+                <td>-</td>
+                <td>-</td>
+                <td>A JSON object holding data about all the movies</td>         
             </tr>
-
             <tr>
-                <th>Get data about the movie by title</th>
-                <th>/movies/[title]</th>
-                <th>GET</th>
-                <th>[title]</th>
-                <th>-</th>
-                <th>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
+                <td>Get data about the movie by title</td>
+                <td>/movies/[title]</td>
+                <td>GET</td>
+                <td>[title]</td>
+                <td>-</td>
+                <td>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -50,57 +59,52 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },
-                </th>
+                </td>
             </tr>
             <tr>
-                <th>Get Genre by Name</th>
-                <th>/movies/genre/[genreName]</th>h
-                <th>GET</th>
-                <th>[genreName]</th>
-                <th>-</th>
-                <th>A JSON object holding data about the genre of a movie</th>
+                <td>Get Genre by Name</td>
+                <td>/movies/genre/[genreName]</td>
+                <td>GET</td>
+                <td>[genreName]</td>
+                <td>-</td>
+                <td>A JSON object holding data about the genre of a movie</td>
             </tr>
             <tr>  
-                <th>Get director data by name</th>
-                <th>/movies/directors/[authorName]</th>
-                <th>GET</th>
-                <th>[authorName]</th>
-                <th>-</th>
-                <th>A JSON object holding data about the data of a director</th>
+                <td>Get director data by name</td>
+                <td>/movies/directors/[authorName]</td>
+                <td>GET</td>
+                <td>[authorName]</td>
+                <td>-</td>
+                <td>A JSON object holding data about the data of a director</td>
             </tr>
-
-
             <tr>
-                <th>Allow new users to Register</th>
-                <th>/users</th>
-                <th>POST</th>
-                <th>-</th>
-                <th>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </th>
-                <th>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </th>
+                <td>Allow new users to Register</td>
+                <td>/users</td>
+                <td>POST</td>
+                <td>-</td>
+                <td>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </td>
+                <td>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </td>
             </tr>
-
-            <th>Allow new users update their user info</th>
-            <th>/users/[id]</th>
-            <th>PUT</th>
-            <th>[id]</th>
-            <th>-</th>
-            <th>A JSON object holding data about the updated info</th>
+            <td>Allow new users update their user info</td>
+            <td>/users/[id]</td>
+            <td>PUT</td>
+            <td>[id]</td>
+            <td>-</td>
+            <td>A JSON object holding data about the updated info</td>
         </tr>
         <tr>
-            <th>Adds movie to favorite list</th>
-            <th>/users/[id]/[movieTitle]</th>
-            <th>POST</th>
-            <th>[movieTitle]</th>
-            <th>-</th>
-            <th>A text message indicating whether the Movie was added</th>
+            <td>Adds movie to favorite list</td>
+            <td>/users/[id]/[movieTitle]</td>
+            <td>POST</td>
+            <td>[movieTitle]</td>
+            <td>-</td>
+            <td>A text message indicating whether the Movie was added</td>
         </tr>
-
-
  <!----         <tr>
-                <th>Add a movie</th>
-                <th>/movies</th>
-                <th>POST</th>
-                <th>A JSON object holding data about the movie to add, structured like:
+                <td>Add a movie</td>
+                <td>/movies</td>
+                <td>POST</td>
+                <td>A JSON object holding data about the movie to add, structured like:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -110,8 +114,8 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },             
-                </th>
-                <th>A JSON object holding data about the movie that was added:
+                </td>
+                <td>A JSON object holding data about the movie that was added:
                     title: "Shutter Island",
                     description:"",
                     imgURL:"",
@@ -120,25 +124,27 @@
                     genre:{name:"Mystery, Thriller"
                            description:""},
                   },
-                </th>
+                </td>
             </tr>
         --->
             <tr>
                 <tr>
-                    <th>remove movie from favorite list</th>
-                    <th>/users/[id]/[movieTitle]</th>
-                    <th>DELETE</th>
-                    <th>[movieTitle]</th>
-                    <th>-</th>
-                    <th>A text message indicating whether the Movie was removed</th>
+                    <td>remove movie from favorite list</td>
+                    <td>/users/[id]/[movieTitle]</td>
+                    <td>DELETE</td>
+                    <td>[movieTitle]</td>
+                    <td>-</td>
+                    <td>A text message indicating whether the Movie was removed</td>
                 </tr>
                 <tr>
-                    <th>Allow existing users to remove it's data</th>
-                    <th>/users/[id]</th>
-                    <th>DELETE</th>
-                    <th>[id]</th>
-                    <th>-</th>
-                    <th>A text message indicating whether the User has deregistered</th>
+                    <td>Allow existing users to remove it's data</td>
+                    <td>/users/[id]</td>
+                    <td>DELETE</td>
+                    <td>[id]</td>
+                    <td>-</td>
+                    <td>A text message indicating whether the User has deregistered</td>
                 </tr>
         </tbody>
    </table>
+</body>
+</html># movie_api
