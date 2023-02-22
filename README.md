@@ -26,21 +26,21 @@
         </thead>
         <tbody>
             <tr>
-                <td>Get a list of the movies</td>       
-                <td>/movies</td>
-                <td>GET</td> 
-                <td>-</td>
-                <td>-</td>
-                <td>A JSON object holding data about all the movies</td>         
+                <th>Get a list of the movies</th>       
+                <th>/movies</th>
+                <th>GET</th> 
+                <th>-</th>
+                <th>-</th>
+                <th>A JSON object holding data about all the movies</th>         
             </tr>
 
             <tr>
-                <td>Get data about the movie by title</td>
-                <td>/movies/[title]</td>
-                <td>GET</td>
-                <td>[title]</td>
-                <td>-</td>
-                <td>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
+                <th>Get data about the movie by title</th>
+                <th>/movies/[title]</th>
+                <th>GET</th>
+                <th>[title]</th>
+                <th>-</th>
+                <th>A JSON object holding data about a single movie, containing a title, description, imgURL, author data and genres of the movie. Example:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -50,57 +50,57 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },
-                </td>
+                </th>
             </tr>
             <tr>
-                <td>Get Genre by Name</td>
-                <td>/movies/genre/[genreName]</td>
-                <td>GET</td>
-                <td>[genreName]</td>
-                <td>-</td>
-                <td>A JSON object holding data about the genre of a movie</td>
+                <th>Get Genre by Name</th>
+                <th>/movies/genre/[genreName]</th>h
+                <th>GET</th>
+                <th>[genreName]</th>
+                <th>-</th>
+                <th>A JSON object holding data about the genre of a movie</th>
             </tr>
             <tr>  
-                <td>Get director data by name</td>
-                <td>/movies/directors/[authorName]</td>
-                <td>GET</td>
-                <td>[authorName]</td>
-                <td>-</td>
-                <td>A JSON object holding data about the data of a director</td>
+                <th>Get director data by name</th>
+                <th>/movies/directors/[authorName]</th>
+                <th>GET</th>
+                <th>[authorName]</th>
+                <th>-</th>
+                <th>A JSON object holding data about the data of a director</th>
             </tr>
 
 
             <tr>
-                <td>Allow new users to Register</td>
-                <td>/users</td>
-                <td>POST</td>
-                <td>-</td>
-                <td>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </td>
-                <td>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </td>
+                <th>Allow new users to Register</th>
+                <th>/users</th>
+                <th>POST</th>
+                <th>-</th>
+                <th>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </th>
+                <th>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </th>
             </tr>
 
-            <td>Allow new users update their user info</td>
-            <td>/users/[id]</td>
-            <td>PUT</td>
-            <td>[id]</td>
-            <td>-</td>
-            <td>A JSON object holding data about the updated info</td>
+            <th>Allow new users update their user info</th>
+            <th>/users/[id]</th>
+            <th>PUT</th>
+            <th>[id]</th>
+            <th>-</th>
+            <th>A JSON object holding data about the updated info</th>
         </tr>
         <tr>
-            <td>Adds movie to favorite list</td>
-            <td>/users/[id]/[movieTitle]</td>
-            <td>POST</td>
-            <td>[movieTitle]</td>
-            <td>-</td>
-            <td>A text message indicating whether the Movie was added</td>
+            <th>Adds movie to favorite list</th>
+            <th>/users/[id]/[movieTitle]</th>
+            <th>POST</th>
+            <th>[movieTitle]</th>
+            <th>-</th>
+            <th>A text message indicating whether the Movie was added</th>
         </tr>
 
 
  <!----         <tr>
-                <td>Add a movie</td>
-                <td>/movies</td>
-                <td>POST</td>
-                <td>A JSON object holding data about the movie to add, structured like:
+                <th>Add a movie</th>
+                <th>/movies</th>
+                <th>POST</th>
+                <th>A JSON object holding data about the movie to add, structured like:
                     {
                         title: "Shutter Island",
                         description:"",
@@ -110,8 +110,8 @@
                         genre:{name:"Mystery, Thriller"
                                description:""},
                       },             
-                </td>
-                <td>A JSON object holding data about the movie that was added:
+                </th>
+                <th>A JSON object holding data about the movie that was added:
                     title: "Shutter Island",
                     description:"",
                     imgURL:"",
@@ -120,25 +120,25 @@
                     genre:{name:"Mystery, Thriller"
                            description:""},
                   },
-                </td>
+                </th>
             </tr>
         --->
             <tr>
                 <tr>
-                    <td>remove movie from favorite list</td>
-                    <td>/users/[id]/[movieTitle]</td>
-                    <td>DELETE</td>
-                    <td>[movieTitle]</td>
-                    <td>-</td>
-                    <td>A text message indicating whether the Movie was removed</td>
+                    <th>remove movie from favorite list</th>
+                    <th>/users/[id]/[movieTitle]</th>
+                    <th>DELETE</th>
+                    <th>[movieTitle]</th>
+                    <th>-</th>
+                    <th>A text message indicating whether the Movie was removed</th>
                 </tr>
                 <tr>
-                    <td>Allow existing users to remove it's data</td>
-                    <td>/users/[id]</td>
-                    <td>DELETE</td>
-                    <td>[id]</td>
-                    <td>-</td>
-                    <td>A text message indicating whether the User has deregistered</td>
+                    <th>Allow existing users to remove it's data</th>
+                    <th>/users/[id]</th>
+                    <th>DELETE</th>
+                    <th>[id]</th>
+                    <th>-</th>
+                    <th>A text message indicating whether the User has deregistered</th>
                 </tr>
         </tbody>
    </table>
