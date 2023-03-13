@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,6 @@
         <li>Allow users to remove a movie from their list of favorites (showing only a text that a movie has been removed—more on this later)</li>
         <li>Allow existing users to deregister (showing only a text that a user email has been removed—more on this later)</li>
     </ol>
-
     <h2>API endpoints</h2>
     <table>
         <thead> 
@@ -43,7 +43,6 @@
                 <td>-</td>
                 <td>A JSON object holding data about all the movies</td>         
             </tr>
-
             <tr>
                 <td>Get data about the movie by title</td>
                 <td>/movies/[title]</td>
@@ -78,8 +77,6 @@
                 <td>-</td>
                 <td>A JSON object holding data about the data of a director</td>
             </tr>
-
-
             <tr>
                 <td>Allow new users to Register</td>
                 <td>/users</td>
@@ -88,7 +85,6 @@
                 <td>A JSON object holding data about the users to add, example: { name : "Vinko", "favoriteMovie" : [] } </td>
                 <td>A JSON object holding data about added user,example: { "name" : "Matija", "favoriteMovies" : [] } with ID </td>
             </tr>
-
             <td>Allow new users update their user info</td>
             <td>/users/[id]</td>
             <td>PUT</td>
@@ -104,8 +100,6 @@
             <td>-</td>
             <td>A text message indicating whether the Movie was added</td>
         </tr>
-
-
  <!----         <tr>
                 <td>Add a movie</td>
                 <td>/movies</td>
