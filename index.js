@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //JSON object holding data about top10movies such as title and author
 
-let allowedOrigins = ["https://poppcorny.netlify.app", "http://localhost:4200", "https://vuyaa.github.io"];
+let allowedOrigins = ["https://poppcorny.netlify.app", "http://localhost:4200", "https://vuyaa.github.io", "http://localhost:1234"];
 app.use(
   cors({
     origin: (origin, callback) => {
